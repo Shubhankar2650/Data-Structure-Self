@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 #include <queue>
 using namespace std;
 
@@ -115,17 +116,51 @@ void levelOrderQueue(Node *root)
     q.push(root);
     while (q.empty() == false)
     {
-        q.pop();
-        if (root->left != NULL)
+        int n = q.size();
+        for (int i = 0; i < n; i++)
         {
-            q.push(root->left);
-        }
-        if (root->right != NULL)
-        {
-            q.push(root->right);
+            Node *currt = q.front();
+            cout << currt->data << ",";
+            if (currt->left != NULL)
+            {
+                q.push(currt->left);
+            }
+            if (currt->right != NULL)
+            {
+                q.push(currt->right);
+            }
+            q.pop();
         }
     }
 }
+
+// time complexity = O(n)
+
+// 👉size of binary tree
+
+int size(Node *root)
+{
+    if (root == NULL)
+        return 0;
+    else
+        return 1 + size(root->left) + size(root->right);
+}
+
+// Time coplexity - O(n)
+// Space coplexity - O(h)
+
+// 👉 Find maximum in binary tree
+int maximum(Node *root)
+{
+    if (root == NULL)
+        return INT_MIN;
+    else
+    {
+        return max(root->data, max(maximum(root->left), maximum(root->right)));
+    }
+}
+
+// we also do it using level order approach;
 
 int main()
 {
@@ -146,9 +181,9 @@ int main()
     binaryTreeRoot->right->left = new Node(15);
     binaryTreeRoot->right->right = new Node(30);
 
-    inoderTraversal(binaryTreeRoot);
+    // inoderTraversal(binaryTreeRoot);
 
-    cout << height(binaryTreeRoot) << endl;
+    // cout << "\nheight of binary tree: " << height(binaryTreeRoot) << endl;
 
     // cout << "Node at kth distance, Enter k";
     // int k;
@@ -156,5 +191,7 @@ int main()
     // nodeAt_K_distance(binaryTreeRoot, k);
 
     // levelOderTraversal(binaryTreeRoot);
-    levelOrderQueue(binaryTreeRoot);
+    // levelOrderQueue(binaryTreeRoot);
+
+    cout << "maximum element in binary tree is:" << maximum(binaryTreeRoot);
 }
