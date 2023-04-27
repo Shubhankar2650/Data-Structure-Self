@@ -1,0 +1,11 @@
+In the BST Section we come to know about the different concepts regarding the tree
+1. Introduction to tree
+2. Introduction to binary tree
+    👉 Implimentation
+    👉 Traversal Techniques(Inorder, Preorder, Postorder, LevelOrder)
+    👉 Height 
+    👉 Size
+    👉 Node at Kth distance
+    👉 Maximum in BT 
+    👉 Left View of BT 
+2. BST(Binary Search Tree)
