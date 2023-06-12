@@ -33,6 +33,10 @@
     "xhash": "cpp",
     "xiosbase": "cpp",
     "xstring": "cpp",
-    "xtree": "cpp"
+    "xtree": "cpp",
+    "atomic": "cpp",
+    "iostream": "cpp",
+    "bitset": "cpp",
+    "initializer_list": "cpp"
   }
 }
