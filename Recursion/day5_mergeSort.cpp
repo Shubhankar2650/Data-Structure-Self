@@ -53,6 +53,8 @@ void merge(int *arr, int s, int e)
         k++;
         j++;
     }
+    delete[] arr1;
+    delete[] arr2;
 }
 
 void mergeSort(int *arr, int s, int e)
