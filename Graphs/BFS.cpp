@@ -1,24 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// ✍️ Graph Implementation
-
-// ✒️ Adjancy list
-
-void addEdge(vector<int>adj[],int u, int v){
-    adj[u].push_back(v);
-    adj[v].push_back(u);
-}
-
-// ✒️ printing the list
-void print(vector<int> adj[], int v){
-    for(int i = 0; i< v; i++){
-        for(int x : adj[i]){
-            cout<< x<< " ";
-        }cout<<endl;
-    }
-}
-
 // Breadth First Search
 
 void bfs(vector<int> adj[], int v, int r){
@@ -71,25 +53,33 @@ void bfsDis(vector<int> adj[], int v){
 // E becacuse in undirected graph it is twice the total no. of edges. and in directed graph it is total no. of edges
 // V because in disconnected graph we have to traverse each vertex.
 
+// Counting connected components in an undirected graph
 
+int countDis(vector<int> adj[], int v){
+    vector<bool> visit(v+1, false);
+    int count= 0;
+    for(int i = 0; i<v; i++){
+        for(int x : adj[i]){
+            if(!visit[x]){
+                count++;
+                BFS(adj,visit, x);
+            }
+        }
+    }
+}
 
-
-
+// ✍️ Applications of BFS
+// ✒️ Shortest path in unweighted graph
+// ✒️ crawlers in search engine
+// ✒️ Peer to peer network
+// ✒️ Broadcasting
+// ✒️ Socaial Networking Search
+// ✒️ In garbage collection (cheney's algorithm)
+// ✒️ In cycle detection
+// ✒️ Ford flukersion algorithm
 
 int main()
 {
-    int v = 6;
-    vector<int> adj[v];
-    addEdge(adj,0,1);   
-    addEdge(adj,0,2);   
-    addEdge(adj,1,2);   
-    addEdge(adj,1,3);
-    addEdge(adj,4,5);
-    print(adj, v);
-    // bfs(adj,v, 0);
     
-    bfsDis(adj,v);
-    // dfs
-    vector<bool> visited(v+1, false);
     return 0;
 }
