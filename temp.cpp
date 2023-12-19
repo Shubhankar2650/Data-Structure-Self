@@ -39,16 +39,30 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution{
-    private:
-    int solve(int x,int y, int c, int d, int m){
-        if(x==c || y == d) return 1;
-        else{
-            return 1+ min(min(solve((x&y),y,c,d,m),solve((x|y),y,c,d,m)) ,
-                         min(solve(x,(x^y),c,d,m),solve(x,(y^m),c,d,m)));
-        }
-    }
+// class Solution{
+//     private:
+//     int solve(int x,int y, int c, int d, int m){
+//         if(x==c || y == d) return 1;
+//         else{
+//             return 1+ min(min(solve((x&y),y,c,d,m),solve((x|y),y,c,d,m)) ,
+//                          min(solve(x,(x^y),c,d,m),solve(x,(y^m),c,d,m)));
+//         }
+//     }
+// }
+
+int distanceCalculate(int x1, int y1, int x2, int y2)
+{
+	int x = x1 - x2; //calculating number to square in next step
+	int y = y1 - y2;
+	int dist;
+
+	dist = pow(x, 2) + pow(y, 2);       //calculating Euclidean distance
+	dist = sqrt(dist);                  
+
+	return dist;
 }
+
+class solution
 
 int main()
 {
