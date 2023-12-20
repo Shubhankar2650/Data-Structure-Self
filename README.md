@@ -1,6 +1,6 @@
 # Data-Structure-Self
 
-These are the codes that are done while learning dsa.
+These are the codes that are done by me while learning dsa.
 
 Topics covered:
 ✍️ Array
