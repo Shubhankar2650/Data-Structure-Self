@@ -17,9 +17,10 @@ void print(vector<int> adj[], int v){
 }
 
 // ✍️ DFS(Depth First Search)
+
 void dfsRec(vector<int> adj[], int s,vector<bool> &visited){
     visited[s] = true;
-    cout<<s<<" "; // comment out it when you want to count the no. of disconnected graphs present.
+    cout<<s<<" "; // comment out it when you want to count the no. of disconnected graphs present.📌
     for(auto x : adj[s]){
         if(visited[x] == false){
             dfsRec(adj, x, visited);
@@ -60,7 +61,7 @@ int countDis(vector<int> adj[], int v){
 // ✒️ Topological Sorting
 // ✒️ Strongly connected components
 // ✒️ Solving maze and similar problems
-// ✒️Finding path
+// ✒️ Finding path
 
 int main()
 {

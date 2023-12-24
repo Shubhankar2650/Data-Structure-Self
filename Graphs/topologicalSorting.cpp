@@ -17,8 +17,9 @@ void print(vector<int> adj[], int v){
 
 // ✒️ Tropological Sorting
 // Also known as "khan's algorithm"
+// Here vertex represents "jobs" and edges represent dependencies. We print the independent job first then jobs dependent on it
+// In other word if there is a vertex in DAG from u-v, then u comes before v in the ordering
 // This sortig only works for the acyclic graph. If the graph contains the cycle then this sorting fails
-// Here vertex represents "jobs" and edges represent dependencies
 
 // identify indegree of all verteces first
 // store all 0 indegree vertex in queue

@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Breadth First Search
+// ✨ Breadth First Search ✨
 
 void bfs(vector<int> adj[], int v, int r){
-    vector<bool> visited(v+1,false);
+    vector<bool> visited(v,false);
     queue<int> q;
     visited[r] = true;
     q.push(r);
@@ -22,7 +22,8 @@ void bfs(vector<int> adj[], int v, int r){
 
 }
 
-// no sourse given adj graph may be disconnected
+// 📌 no sourse given adj graph may be disconnected
+
 void BFS(vector<int> adj[], vector<bool> &visit ,int s){
     queue<int> q;
     q.push(s);
@@ -41,7 +42,7 @@ void BFS(vector<int> adj[], vector<bool> &visit ,int s){
 }
 
 void bfsDis(vector<int> adj[], int v){
-    vector<bool> visit(v+1, false);
+    vector<bool> visit(v, false);
     for(int i = 0; i< v; i++){
         if(visit[i] == false){
             BFS(adj, visit, i);
@@ -53,7 +54,7 @@ void bfsDis(vector<int> adj[], int v){
 // E becacuse in undirected graph it is twice the total no. of edges. and in directed graph it is total no. of edges
 // V because in disconnected graph we have to traverse each vertex.
 
-// Counting connected components in an undirected graph
+// ✍ Counting connected components in an undirected graph
 
 int countDis(vector<int> adj[], int v){
     vector<bool> visit(v+1, false);
@@ -66,6 +67,7 @@ int countDis(vector<int> adj[], int v){
             }
         }
     }
+    return count;
 }
 
 // ✍️ Applications of BFS

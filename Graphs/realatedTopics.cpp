@@ -45,7 +45,7 @@ vector<int> shortestPath(vector<int> adj[],int v, int s){
 
 // Time complexity: Its equal to bfs i.e 0(v+e)
 
-// Detect cycle in the undirected graph
+// ✒️ Detect cycle in the undirected graph
 
 bool DFSRec(vector<int> adj[], int s,vector<bool> visited, int p){ // p = parent, s= source
     visited[s] = true;
@@ -68,9 +68,9 @@ bool cycle(vector<int> adj[], int v){
     return false;
 }
 
-// for directed graph
+// 💠 for directed graph
 
-bool DFSRecDir(vector<int> adj[], int s,vector<bool> visited,vector<bool> recst){ // s= source
+bool DFSRecDir(vector<int> adj[], int s,vector<bool> &visited,vector<bool> recst){ // s= source
     visited[s] = true;
     recst[s] = true;
     for(int x : adj[s]){
