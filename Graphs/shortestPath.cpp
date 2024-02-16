@@ -30,11 +30,11 @@ void print(vector<int> adj[], int v){
 void dfsR(vector<int> adj[],vector<bool> visited,vector<vector<int>>w,vector<int>&ans,int weight,int s){
     visited[s] = true;
     for(auto x: adj[s]){
-        // if(!visited[x] ){
+        if(!visited[x] ){
             dfsR(adj,visited,w,ans,weight,x);
-            weight += w[s][x];
-            if(weight<ans[x]) ans[x] = weight;
-        // }
+        }
+        weight += w[s][x];
+        if(weight<ans[x]) ans[x] = weight;
     }
 }
 
